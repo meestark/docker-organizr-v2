@@ -1,2 +1,0 @@
-#!/usr/bin/with-contenv bash
-sed -ie 's;h=40;h=60;g' /config/www/Dashboard/js/custom.min.js
