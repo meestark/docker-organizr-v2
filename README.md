@@ -1,4 +1,4 @@
-Fork of the LSIO Organizr Docker container to include the Organizr v2 development branch. This image uses the plex-theme branch which contains a few changes to accomodate the [Plex Theme](https://github.com/Burry/organizr-v2-plex-theme) for Organizr v2 by Burry.
+Fork of the LSIO Organizr Docker container to include the Organizr v2 development branch. This image uses the plex-theme branch which contains a few changes to accommodate the [Plex Theme](https://github.com/Burry/organizr-v2-plex-theme) for Organizr v2 by Burry.
 
 # tronyx/docker-organizr-v2:plex-theme
 
@@ -18,7 +18,7 @@ docker create \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
   -p 80:80 \
-  tronyx/docker-organizr-v2
+  tronyx/organizr-v2-plex
 ```
 
 ## Parameters
