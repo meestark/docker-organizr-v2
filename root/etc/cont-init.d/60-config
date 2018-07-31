@@ -1,50 +1,18 @@
 #!/usr/bin/with-contenv bash
 
-
-
-# Create www.conf file for PHP-FPM if it doesn't exist
-if [ ! -f /config/php/www.conf ]; then
-  echo '--------------------------'
-  echo '| Creating www.conf file |'
-  echo '--------------------------'
-  echo "[www]" > /config/php/www.conf
-  echo "user = abc" >> /config/php/www.conf
-  echo "group = abc" >> /config/php/www.conf
-  echo "listen = '/var/run/php7-fpm.sock'" >> /config/php/www.conf
-  echo "listen.owner = abc" >> /config/php/www.conf
-  echo "listen.group = abc" >> /config/php/www.conf
-  echo "listen.mode = 0660" >> /config/php/www.conf
-  echo "pm = ondemand" >> /config/php/www.conf
-  echo "pm.max_children = 4000" >> /config/php/www.conf
-  echo "pm.start_servers = 2" >> /config/php/www.conf
-  echo "pm.min_spare_servers = 1" >> /config/php/www.conf
-  echo "pm.max_spare_servers = 3" >> /config/php/www.conf
-  echo "pm.process_idle_timeout = 10s;" >> /config/php/www.conf
-  echo "pm.max_requests = 0" >> /config/php/www.conf
-elif [ -f /config/php/www.conf ]; then
+# Backup the www.conf file for PHP-FPM if it exists
+# & copy in www.conf for PHP-FPM
+if [ ! -f /config/php/www.conf.original ]; then
   echo '---------------------------'
   echo '| Backing up www.conf file |'
   echo '---------------------------'
   mv /config/php/www.conf /config/php/www.conf.original
-  echo '--------------------------'
-  echo '| Creating www.conf file |'
-  echo '--------------------------'
-  echo "[www]" > /config/php/www.conf
-  echo "user = abc" >> /config/php/www.conf
-  echo "group = abc" >> /config/php/www.conf
-  echo "listen = '/var/run/php7-fpm.sock'" >> /config/php/www.conf
-  echo "listen.owner = abc" >> /config/php/www.conf
-  echo "listen.group = abc" >> /config/php/www.conf
-  echo "listen.mode = 0660" >> /config/php/www.conf
-  echo "pm = ondemand" >> /config/php/www.conf
-  echo "pm.max_children = 4000" >> /config/php/www.conf
-  echo "pm.start_servers = 2" >> /config/php/www.conf
-  echo "pm.min_spare_servers = 1" >> /config/php/www.conf
-  echo "pm.max_spare_servers = 3" >> /config/php/www.conf
-  echo "pm.process_idle_timeout = 10s;" >> /config/php/www.conf
-  echo "pm.max_requests = 0" >> /config/php/www.conf
-else
-  :
+  echo '---------------------------'
+  echo '|  Copying www.conf file  |'
+  echo '---------------------------'
+  cp /defaults/www.conf /config/php/www.conf
+elif [[ ! -f /config/php/www.conf ]]; then
+  cp /defaults/www.conf /config/php/www.conf
 fi
 
 # Set Permissions
