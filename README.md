@@ -46,6 +46,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Image Tags
 
 * The `latest` tag will get you the original Organizr v2 image.
+* The `php-fpm` tag includes the implementation of PHP-FPM within the container instead of the default FastCGI. PHP-FPM is much more efficient, especially in terms of memory, and will include the recommended PM changes for the `www.conf` file that we recommend to users that are just getting started. One thing to note is that, if you mounted the `/etc/php7/php-fpm.d/` directory for the container to your Host, you MUST recreate your container WITHOUT that mount. You will also want to remove the `/path/to/Org/config/php` directory from your Docker Host as that can cause issues as well. This is designed as a drop-in to get PHP-FPM working without having to mount extra directories, etc.
 * The `plex` tag will get you the original Organizr v2 image, but with some changes found in the plex-theme branch of the GitHub repo to accommodate the [Plex Theme](https://github.com/Burry/organizr-v2-plex-theme) for Organizr v2 by Burry.
 
 ## Setting up the application
