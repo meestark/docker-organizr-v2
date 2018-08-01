@@ -14,3 +14,7 @@ if [ ! -f /etc/php7/php-fpm.d/www.conf.original ]; then
 elif [[ ! -f /config/php/www.conf ]]; then
   cp /defaults/www.conf /etc/php7/php-fpm.d/www.conf
 fi
+
+# Copy over modified default site file
+# to use PHP-FPM
+cp /defaults/default /config/nginx/site-confs/default
