@@ -1,6 +1,9 @@
 FROM lsiobase/alpine.nginx.armhf:3.7
 MAINTAINER christronyxyocum
 
+# Copy the qemu-arm-static file
+COPY qemu-arm-static /usr/bin
+
 # Set version label
 ARG BUILD_DATE
 ARG VERSION
