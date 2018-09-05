@@ -40,8 +40,6 @@ if [ ! -f /config/php/.php-local.ini.original ]; then
   sort -u /defaults/php-local.ini /config/php/.php-local.ini.original > /config/php/php-local.ini
 fi
 
-fi
-
 # Triple-checking permissions are correct
 # Set Permissions
 chown -R abc:abc /config
