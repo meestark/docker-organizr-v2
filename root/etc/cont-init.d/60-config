@@ -28,18 +28,6 @@ if [ ! -f /config/nginx/site-confs/.default.original ]; then
   cp /defaults/default /config/nginx/site-confs/default
 fi
 
-# Merge in php-local.ini file
-if [ ! -f /config/php/.php-local.ini.original ]; then
-  echo '-------------------------------------'
-  echo '|   Backing up php-local.ini file   |'
-  echo '-------------------------------------'
-  cp /config/php/php-local.ini /config/php/.php-local.ini.original
-  echo '--------------------------------------'
-  echo '|  Merging php-local.ini site files  |'
-  echo '--------------------------------------'
-  sort -u /defaults/php-local.ini /config/php/.php-local.ini.original > /config/php/php-local.ini
-fi
-
 # Triple-checking permissions are correct
 # Set Permissions
 chown -R abc:abc /config
