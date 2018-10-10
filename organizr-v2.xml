@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/organizr.xml</TemplateURL>
+  <Beta>True</Beta>
+  <Category>Tools: Network:Web Network:Proxy Network:Other</Category>
+  <Date>2017-03-11</Date>
+<Changes>
+  [center][img width='300px' src='https://raw.githubusercontent.com/causefx/Organizr/master/images/organizr_logo_d.png'][/center]
+
+  [center][font size=4]Organizr Change Log[/font][/center]
+  [b]11.03.2017:[/b] Initial Release.
+  </Changes>
+  <Name>organizr</Name>
+  <Project>https://github.com/causefx/Organizr</Project>
+  <Support>https://www.reddit.com/r/organizr/</Support>
+  <Repository>christronyxyocum/docker-organizr-v2</Repository>
+  <Registry>https://hub.docker.com/r/tronyx/docker-organizr-v2/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Overview>HTPC/Homelab Services Organizer - Written in PHP</Overview>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/causefx/Organizr/master/images/organizr_logo_d.png</Icon>
+  <Description>HTPC/Homelab Services Organizer - Written in PHP&#xD;
+[br]&#xD;
+[br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+[b]/config[/b] : Storing all organizr config files [br]&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+    </Variable>
+  </Environment>
+<DonateText>Donations</DonateText>
+<DonateLink>https://paypal.me/causefx</DonateLink>
+<DonateImg>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/donate.png</DonateImg>
+<BaseImage>lsiobase/alpine.nginx:3.8</BaseImage>
+</Container>
