@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <TemplateURL>https://raw.githubusercontent.com/christronyxyocum/docker-organizr-v2/master/organizr-v2.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/organizrTools/docker-organizr-v2/master/organizr-v2.xml</TemplateURL>
   <Beta>True</Beta>
   <Category>Tools: Network:Web Network:Proxy Network:Other</Category>
   <Date>2017-03-11</Date>
@@ -10,10 +10,10 @@
   [center][font size=4]Organizr Change Log[/font][/center]
   [b]11.03.2017:[/b] Initial Release.
   </Changes>
-  <Name>organizr</Name>
+  <Name>Organizr v2</Name>
   <Project>https://github.com/causefx/Organizr</Project>
   <Support>https://www.reddit.com/r/organizr/</Support>
-  <Repository>christronyxyocum/docker-organizr-v2</Repository>
+  <Repository>organizrTools/docker-organizr-v2</Repository>
   <Registry>https://hub.docker.com/r/tronyx/docker-organizr-v2/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
@@ -54,6 +54,6 @@
   </Environment>
 <DonateText>Donations</DonateText>
 <DonateLink>https://paypal.me/causefx</DonateLink>
-<DonateImg>https://raw.githubusercontent.com/christronyxyocum/docker-organizr-v2/master/images/donate.png</DonateImg>
+<DonateImg>https://raw.githubusercontent.com/organizrTools/docker-organizr-v2/master/images/donate.png</DonateImg>
 <BaseImage>lsiobase/alpine.nginx:3.8</BaseImage>
 </Container>
