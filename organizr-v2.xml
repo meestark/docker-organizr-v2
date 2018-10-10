@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/organizr.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/christronyxyocum/docker-organizr-v2/master/organizr-v2.xml</TemplateURL>
   <Beta>True</Beta>
   <Category>Tools: Network:Web Network:Proxy Network:Other</Category>
   <Date>2017-03-11</Date>
@@ -54,6 +54,6 @@
   </Environment>
 <DonateText>Donations</DonateText>
 <DonateLink>https://paypal.me/causefx</DonateLink>
-<DonateImg>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/donate.png</DonateImg>
+<DonateImg>https://raw.githubusercontent.com/christronyxyocum/docker-organizr-v2/master/images/donate.png</DonateImg>
 <BaseImage>lsiobase/alpine.nginx:3.8</BaseImage>
 </Container>
