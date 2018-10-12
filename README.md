@@ -1,6 +1,6 @@
 Fork of the LSIO Organizr Docker container to include the Organizr v2 development branch.
 
-# tronyx/docker-organizr-v2
+# organizrTools/docker-organizr-v2
 
 Feel free to submit Pull Requests and report any Issues that you may have found.
 
@@ -18,7 +18,7 @@ docker create \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
   -p 80:80 \
-  tronyx/docker-organizr-v2
+  organizrtools/docker-organizr-v2
 ```
 
 ## Parameters
@@ -59,4 +59,4 @@ Setup accounts, service tabs, etc. via the webUI. More info can be found on the 
 * Shell access whilst the container is running: `docker exec -it organizr /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f organizr`
 * Container version number: `docker inspect -f '{{ index .Config.Labels "build_version" }}' organizr`
-* Image version number: `docker inspect -f '{{ index .Config.Labels "build_version" }}' tronyx/docker-organizr-v2`
+* Image version number: `docker inspect -f '{{ index .Config.Labels "build_version" }}' organizrtools/docker-organizr-v2`
