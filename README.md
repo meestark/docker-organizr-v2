@@ -8,7 +8,7 @@ Feel free to submit Pull Requests and report any Issues that you may have found.
 
 An HTPC/Homelab services organizer that is written in PHP.
 
-![organizr](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png)
+![Organizr](https://cloud.githubusercontent.com/assets/16184466/24440636/1e5e2002-140a-11e7-8da1-1cd68745cedd.png)
 
 ## Usage
 
@@ -18,7 +18,7 @@ docker create \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
   -p 80:80 \
-  organizrtools/docker-organizr-v2
+  organizrtools/organizr-v2
 ```
 
 ## Parameters
