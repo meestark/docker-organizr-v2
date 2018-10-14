@@ -5,6 +5,3 @@ echo '------------------------------------'
 echo '| Making JS changes for Plex Theme |'
 echo '------------------------------------'
 sed -ie 's;h=40;h=60;g' /config/www/Dashboard/js/custom.min.js
-sed -i '278i\                        $('\''.sidebar'\'').addClass('\''hidden'\'');' /config/www/Dashboard/js/functions.js
-sed -i '279i\                        $('\''.navbar'\'').addClass('\''hidden'\'');' /config/www/Dashboard/js/functions.js
-sed -i '280i\                        $('\''#pagewrapper'\'').addClass('\''hidden'\'');' /config/www/Dashboard/js/functions.js
