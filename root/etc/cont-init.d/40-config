@@ -4,4 +4,4 @@
 echo '------------------------------------'
 echo '| Making JS changes for Plex Theme |'
 echo '------------------------------------'
-sed -ie 's;h=40;h=60;g' /config/www/Dashboard/js/custom.min.js
+sed -ie 's;i=40;i=60;g' /config/www/Dashboard/js/custom.min.js
