@@ -15,6 +15,5 @@ script:
 # Build image
 - docker build -t organizrtools/docker-organizr-v2:armhf .
 # Push image
-- >
-  docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-  docker push organizrtools/docker-organizr-v2:armhf
+- docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}
+- docker push organizrtools/docker-organizr-v2:armhf
