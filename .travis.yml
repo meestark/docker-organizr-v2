@@ -1,0 +1,15 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+# Prepare qemu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# Build image
+- docker build -t organizrtools/docker-organizr-v2:armhf .
+# Test image
+- docker run organizrtools/docker-organizr-v2:armhf nginx -v
+# Push image
+#- >
+#  docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+#  docker push organizrtools/docker-organizr-v2:armhf
