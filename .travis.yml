@@ -4,7 +4,7 @@ services:
 language: bash
 script:
 # Prepare qemu
-- docker run --rm qemu --privileged multiarch/qemu-user-static:register --reset
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
 #- docker cp qemu:/usr/bin/qemu-arm-static .
 #- docker stop qemu
 #- docker rm qemu
