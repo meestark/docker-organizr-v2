@@ -6,6 +6,8 @@ Feel free to submit Pull Requests and report any Issues that you may have found.
 
 ## Organizr
 
+[![Build Status](https://travis-ci.org/organizrTools/docker-organizr-v2.svg?branch=master)](https://travis-ci.org/organizrTools/docker-organizr-v2)
+
 An HTPC/Homelab services organizer that is written in PHP.
 
 ![Organizr](https://cloud.githubusercontent.com/assets/16184466/24440636/1e5e2002-140a-11e7-8da1-1cd68745cedd.png)
