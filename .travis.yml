@@ -13,7 +13,7 @@ script:
 # Copy qemu binary
 - cp /usr/bin/qemu-arm-static .
 # Build image
-- docker build -t organizrtools/docker-organizr-v2:armhf .
+- docker build -t organizrtools/organizr-v2:armhf .
 # Push image
 - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}
-- docker push organizrtools/docker-organizr-v2:armhf
+- docker push organizrtools/organizr-v2:armhf
