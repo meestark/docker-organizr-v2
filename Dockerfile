@@ -1,4 +1,5 @@
-FROM lsiobase/alpine.nginx.armhf:3.8
+#FROM lsiobase/alpine.nginx.armhf:3.8
+FROM resin/rpi-raspbian
 MAINTAINER organizrtools
 
 # Copy the qemu-arm-static file
