@@ -4,7 +4,10 @@ services:
 language: bash
 script:
 # Prepare qemu
-- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+- docker run --name qemu --privileged multiarch/qemu-user-static:register --reset
+- docker cp qemu:/usr/bin/qemu-arm-static .
+- docker stop qemu
+- docker rm qemu
 # Build image
 - docker build -t organizrtools/docker-organizr-v2:armhf .
 # Test image

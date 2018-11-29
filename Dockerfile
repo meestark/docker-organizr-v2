@@ -1,9 +1,8 @@
-#FROM lsiobase/alpine.nginx.armhf:3.8
-FROM resin/rpi-raspbian
+FROM lsiobase/alpine.nginx.armhf:3.8
 MAINTAINER organizrtools
 
 # Copy the qemu-arm-static file
-#COPY qemu-arm-static /usr/bin/qemu-arm-static
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 # Set version label
 ARG BUILD_DATE
