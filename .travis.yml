@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+language: bash
+script:
+  # Build image
+  - docker build -t organizrtools/organizr-v2:plex .
+  # Test image
+  - docker run organizrtools/organizr-v2:plex nginx -v
+after_success:
+  # Push image
+  - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}
+  - docker push organizrtools/organizr-v2:plex
