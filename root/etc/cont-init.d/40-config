@@ -18,3 +18,6 @@ if [ ! -f /config/nginx/site-confs/.default.original ]; then
   echo '--------------------------------------'
   cp /defaults/default /config/nginx/site-confs/default
 fi
+
+# Copy over Docker.txt file for Organizr check
+cp /defaults/Docker.txt /config/www/Dashboard/Docker.txt
