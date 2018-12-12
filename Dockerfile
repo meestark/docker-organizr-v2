@@ -1,5 +1,5 @@
 FROM lsiobase/alpine.nginx:3.8
-MAINTAINER christronyxyocum
+MAINTAINER OrganizrTools
 
 # Set version label
 ARG BUILD_DATE
@@ -20,6 +20,9 @@ RUN \
 
 # Add local files
 COPY root/ /
+
+# Creater Docker.txt for Org check
+RUN true > /Docker.txt
 
 # Ports and volumes
 EXPOSE 80
