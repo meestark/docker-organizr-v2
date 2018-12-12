@@ -1,5 +1,5 @@
 FROM lsiobase/alpine.nginx.armhf:3.8
-MAINTAINER organizrtools
+MAINTAINER OrganizrTools
 
 # Copy the qemu-arm-static file
 COPY qemu-arm-static /usr/bin/qemu-arm-static
@@ -23,6 +23,9 @@ RUN \
 
 # Add local files
 COPY root/ /
+
+# Creater Docker.txt for Org check
+RUN true > /Docker.txt
 
 # Ports and volumes
 EXPOSE 80
