@@ -22,7 +22,7 @@ RUN \
 COPY root/ /
 
 # Creater Docker.txt for Org check
-RUN true > /config/www/Dashboar/Docker.txt
+RUN true > config/www/Dashboar/Docker.txt
 
 # Ports and volumes
 EXPOSE 80
