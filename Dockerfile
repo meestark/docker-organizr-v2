@@ -21,6 +21,9 @@ RUN \
 # Add local files
 COPY root/ /
 
+# Creater Docker.txt for Org check
+RUN true > /Docker.txt
+
 # Ports and volumes
 EXPOSE 80
 VOLUME /config
