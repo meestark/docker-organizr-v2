@@ -6,7 +6,7 @@ Feel free to submit Pull Requests and report any Issues that you may have found.
 
 ## Organizr
 
-[![Build Status](https://travis-ci.org/organizrTools/docker-organizr-v2.svg?branch=master)](https://travis-ci.org/organizrTools/docker-organizr-v2)
+[![Build Status](https://travis-ci.org/organizrTools/docker-organizr-v2.svg?branch=plex-theme)](https://travis-ci.org/organizrTools/docker-organizr-v2)
 
 An HTPC/Homelab services organizer that is written in PHP.
 

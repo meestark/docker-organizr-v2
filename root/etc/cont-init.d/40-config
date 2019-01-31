@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv bash
+
+# Changes to work with Plex Theme
+echo '------------------------------------'
+echo '| Making JS changes for Plex Theme |'
+echo '------------------------------------'
+sed -ie 's;i=40;i=60;g' /config/www/Dashboard/js/custom.min.js
+
+# Copy over modified default site file
+# to use PHP-FPM
+if [ ! -f /config/nginx/site-confs/.default.original ]; then
+  echo '--------------------------------------'
+  echo '|      Backing up default file       |'
+  echo '--------------------------------------'
+  mv /config/nginx/site-confs/default /config/nginx/site-confs/.default.original
+  echo '--------------------------------------'
+  echo '|      Copying default site file     |'
+  echo '--------------------------------------'
+  cp /defaults/default /config/nginx/site-confs/default
+fi
+
+# Copy over Docker.txt file for Organizr check
+cp /defaults/Docker.txt /config/www/Dashboard/Docker.txt
