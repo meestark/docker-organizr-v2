@@ -15,6 +15,9 @@ elif [[ -d /config/www/Dashboard/.git ]]; then
   git pull --rebase
 fi
 
+# Make sure the config.php file is using the correct branch
+sed "s/'branch' => '[^']*',/'branch' =\> 'v2-master',/" /config/www/Dashboard/api/config/config.php
+
 # Set Permissions
 chown -R abc:abc \
 	/config
