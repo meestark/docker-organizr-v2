@@ -1,9 +1,5 @@
-FROM lsiobase/alpine.nginx:3.8
-MAINTAINER OrganizrTools
-
-# Set version label
-ARG BUILD_DATE
-ARG VERSION
+FROM tronyx/nginx-alpine
+LABEL maintainer=OrganizrTools
 
 # Install packages
 RUN \
