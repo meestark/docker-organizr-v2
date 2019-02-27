@@ -1,9 +1,5 @@
-FROM lsiobase/alpine.nginx:3.8
+FROM lsiobase/alpine.nginx:3.9
 LABEL maintainer=OrganizrTools
-
-# Set version label
-ARG BUILD_DATE
-ARG VERSION
 
 # Install packages
 RUN \
