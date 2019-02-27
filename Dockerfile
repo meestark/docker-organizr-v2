@@ -1,5 +1,5 @@
 FROM lsiobase/alpine.nginx:3.8
-MAINTAINER OrganizrTools
+LABEL maintainer=OrganizrTools
 
 # Set version label
 ARG BUILD_DATE
