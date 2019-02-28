@@ -16,6 +16,7 @@ elif [[ -d /config/www/Dashboard/.git ]]; then
   git checkout v2-develop
   git reset --hard origin/v2-develop
   git pull
+  git rev-parse HEAD > /config/www/Dashboard/Github.txt
 fi
 
 # Set Permissions
