@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx.armhf:3.8
+FROM lsiobase/alpine.nginx.armhf:3.9
 MAINTAINER OrganizrTools
 
 # Copy the qemu-arm-static file
