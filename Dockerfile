@@ -2,7 +2,7 @@ FROM lsiobase/alpine.nginx.arm64:3.9
 LABEL maintainer=OrganizrTools
 
 # Copy the qemu-arm-static file
-COPY qemu-arm-static /usr/bin/qemu-arm-static
+COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static
 
 # Install packages
 RUN \
