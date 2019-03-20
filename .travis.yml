@@ -15,7 +15,7 @@ script:
   # Build image
   - docker build -t organizrtools/organizr-v2:dev-arm64 .
   # Test image
-  - docker run organizrtools/organizr-v2:dev-arm64 nginx -v
+  #- docker run organizrtools/organizr-v2:dev-arm64 nginx -v
 after_success:
   # Push image if not a PR
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}; fi'
