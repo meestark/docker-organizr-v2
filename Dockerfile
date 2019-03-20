@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx:3.9
+FROM organizrtools/base-alpine-nginx
 LABEL maintainer=OrganizrTools
 
 # Install packages
