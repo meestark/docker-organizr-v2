@@ -2,7 +2,16 @@ sudo: required
 services:
   - docker
 language: bash
+addons:
+  apt:
+    packages:
+      - qemu
+      - qemu-user-static
+      - qemu-user
+      - binfmt-support
 script:
+  # Copy qemu binary
+  - cp /usr/bin/qemu-arm-static .
   # Build image
   - docker build -t organizrtools/organizr-v2:dev-arm64 .
   # Test image
