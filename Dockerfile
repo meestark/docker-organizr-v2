@@ -1,4 +1,4 @@
-FROM tronyx/nginx-alpine
+FROM tronyx/base-alpine-nginx
 LABEL maintainer=OrganizrTools
 
 # Install packages

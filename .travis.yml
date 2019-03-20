@@ -4,10 +4,10 @@ services:
 language: bash
 script:
   # Build image
-  - docker build -t organizrtools/organizr-v2:dev-php-fpm .
+  - docker build -t organizrtools/organizr-v2:testing .
   # Test image
-  - docker run organizrtools/organizr-v2:dev-php-fpm nginx -v
+  - docker run organizrtools/organizr-v2:testing nginx -v
 after_success:
   # Push image if not a PR
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push organizrtools/organizr-v2:dev-php-fpm; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push organizrtools/organizr-v2:testing; fi'
