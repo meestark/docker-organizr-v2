@@ -1,4 +1,4 @@
-FROM organizrtools/base-alpine-nginx
+FROM lsiobase/alpine.nginx.arm64:3.9
 LABEL maintainer=OrganizrTools
 
 # Copy the qemu-arm-static file
