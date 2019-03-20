@@ -11,7 +11,7 @@ addons:
       - binfmt-support
 script:
   # Copy qemu binary
-  - cp /usr/bin/qemu-arm-static .
+  - cp /usr/bin/qemu-aarch64-static .
   # Build image
   - docker build -t organizrtools/organizr-v2:dev-arm64 .
   # Test image
