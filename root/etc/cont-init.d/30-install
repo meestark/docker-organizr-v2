@@ -1,0 +1,25 @@
+#!/usr/bin/with-contenv bash
+
+# Fetch site or update existing
+if [[ ! -d /config/www/Dashboard/.git ]]; then
+  echo '-----------------------'
+  echo '| Installing Organizr |'
+  echo '-----------------------'
+  git clone -b v2-master https://github.com/causefx/Organizr /config/www/Dashboard
+  git rev-parse HEAD > /config/www/Dashboard/Github.txt
+elif [[ -d /config/www/Dashboard/.git ]]; then
+  echo '-----------------------'
+  echo '|  Updating Organizr  |'
+  echo '-----------------------'
+  cd /config/www/Dashboard || (echo 'Failed to load Organizr repository folder'; exit)
+  git fetch
+  git reset --hard origin/v2-master
+  git checkout v2-master
+  git reset --hard origin/v2-master
+  git pull
+  git rev-parse HEAD > /config/www/Dashboard/Github.txt
+fi
+
+# Set Permissions
+chown -R abc:abc \
+	/config
