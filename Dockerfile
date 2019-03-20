@@ -1,12 +1,5 @@
-FROM lsiobase/alpine.nginx.armhf:3.9
-MAINTAINER OrganizrTools
-
-# Copy the qemu-arm-static file
-COPY qemu-arm-static /usr/bin/qemu-arm-static
-
-# Set version label
-ARG BUILD_DATE
-ARG VERSION
+FROM lsiobase/alpine.nginx.arm64:3.9
+LABEL maintainer=OrganizrTools
 
 # Install packages
 RUN \

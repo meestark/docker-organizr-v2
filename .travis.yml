@@ -2,19 +2,12 @@ sudo: required
 services:
   - docker
 language: bash
-addons:
-  apt:
-    packages:
-      - qemu
-      - qemu-user-static
-      - qemu-user
-      - binfmt-support
 script:
-  # Copy qemu binary
-  - cp /usr/bin/qemu-arm-static .
   # Build image
-  - docker build -t organizrtools/organizr-v2:armhf .
+  - docker build -t organizrtools/organizr-v2:dev-arm64 .
+  # Test image
+  - docker run organizrtools/organizr-v2:dev-arm64 nginx -v
 after_success:
   # Push image if not a PR
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" ${DOCKER_REGISTRY}; fi'
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push organizrtools/organizr-v2:armhf; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push organizrtools/organizr-v2:dev-arm64; fi'
