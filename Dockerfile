@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx:3.9
+FROM organizrtools/base-alpine-nginx
 MAINTAINER OrganizrTools
 
 # Set version label
