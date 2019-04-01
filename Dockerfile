@@ -1,12 +1,8 @@
-FROM organizrtools/base-alpine-nginx
-MAINTAINER OrganizrTools
+FROM lsiobase/alpine.nginx.armhf:3.9
+LABEL maintainer=OrganizrTools
 
 # Copy the qemu-arm-static file
 COPY qemu-arm-static /usr/bin/qemu-arm-static
-
-# Set version label
-ARG BUILD_DATE
-ARG VERSION
 
 # Install packages
 RUN \
@@ -18,8 +14,7 @@ RUN \
 	php7-sqlite3 \
 	php7-session \
 	php7-zip \
-  php7-xmlrpc \
-  mediainfo
+  php7-xmlrpc
 
 # Add local files
 COPY root/ /
