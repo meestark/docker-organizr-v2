@@ -53,6 +53,8 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 * The `armhf` tag is an adaptation of the `php-fpm` image for ArmHF platforms like the RaspberryPi.
 * The `arm64` tag is an adaptation of the `php-fpm` image for Arm64 platforms like the ASRock64.
 
+NOTE: Switching to OR from the `php-fpm` or `dev-php-fpm` tags to/from ANY other tag will result in an error as they use a socket for the PHP-FPM connection. You will need to backup and then rename/remove your `/config/nginx/site-confs/default` and `/config/php/www.conf` files, then restart the container.
+
 ## Setting up the application
 
 Setup accounts, service tabs, etc. via the webUI. More info can be found on the official [Organizr GitHub repository](https://github.com/causefx/Organizr/).
