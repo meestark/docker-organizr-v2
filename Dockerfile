@@ -3,7 +3,7 @@ FROM lsiobase/nginx:arm32v7-3.10
 LABEL MAINTAINER="organizrTools,christronyxyocum"
 
 # Copy the qemu-arm-static file
-COPY qemu-arm-static /usr/bin/qemu-arm-static
+#COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 # Install packages
 RUN \
