@@ -1,5 +1,6 @@
-FROM lsiobase/alpine.nginx.armhf:3.9
-LABEL maintainer=OrganizrTools
+#FROM lsiobase/alpine.nginx.armhf:3.9
+FROM lsiobase/nginx:arm32v7-3.10
+LABEL MAINTAINER="organizrTools,christronyxyocum"
 
 # Copy the qemu-arm-static file
 COPY qemu-arm-static /usr/bin/qemu-arm-static
