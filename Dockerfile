@@ -1,5 +1,5 @@
 FROM organizrtools/base-alpine-nginx
-LABEL maintainer=OrganizrTools
+LABEL MAINTAINER="organizrTools,christronyxyocum"
 
 # Install packages
 RUN \
