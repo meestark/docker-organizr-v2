@@ -21,7 +21,7 @@ elif [[ -d /config/www/Dashboard/.git ]]; then
 fi
 
 # Copy over Nginx status config file if it doesn't exist
-if [ ! -f /config/nginx/site-confs/healthcheck.conf ]; then
+if [ ! -f /config/nginx/healthcheck.conf ]; then
   echo '----------------------------------'
   echo '| Copying Nginx status conf file |'
   echo '----------------------------------'
