@@ -25,7 +25,7 @@ if [ ! -f /config/nginx/site-confs/healthcheck.conf ]; then
   echo '----------------------------------'
   echo '| Copying Nginx status conf file |'
   echo '----------------------------------'
-  cp /defaults/healthcheck.conf /config/nginx/site-confs/healthcheck.conf
+  cp /defaults/healthcheck.conf /config/nginx/healthcheck.conf
 else
   :
 fi
@@ -33,7 +33,7 @@ fi
 # Check for the include for the healthcheck conf and,
 # if it does not exist, add it
 if [[ $(grep -c healthcheck /config/nginx/site-confs/default) -eq 0 ]]; then
-  sed -i $'s|root /config/www/Dashboard;|root /config/www/Dashboard;\\\n        include /config/nginx/site-confs/healthcheck.conf|g' /config/nginx/site-confs/default
+  sed -i $'s|root /config/www/Dashboard;|root /config/www/Dashboard;\\\n        include /config/nginx/healthcheck.conf;|g' /config/nginx/site-confs/default
 elif [[ $(grep -c healthcheck /config/nginx/site-confs/default) -ge 1 ]]; then
   :
 fi
