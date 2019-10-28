@@ -46,6 +46,14 @@ elif [[ $(grep -c try_files /config/nginx/site-confs/default) -ge 2 ]]; then
   :
 fi
 
+# Check for the fastcgi_hide_header line and,
+# if it does not exist, add it
+if [[ $(grep -c fastcgi_hide_header /config/nginx/site-confs/default) -eq 0 ]]; then
+  sed -i $'s|include /etc/nginx/fastcgi_params;|include /etc/nginx/fastcgi_params;\\\n                fastcgi_hide_header X-Powered-By;|g' /config/nginx/site-confs/default
+elif [[ $(grep -c fastcgi_hide_header /config/nginx/site-confs/default) -ge 1 ]]; then
+  :
+fi
+
 # Set Permissions
 chown -R abc:abc \
 	/config
