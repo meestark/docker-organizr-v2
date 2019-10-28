@@ -20,7 +20,7 @@ server {
 	location / {
 		try_files $uri $uri/ /index.html /index.php?$args =404;
 	}
-	
+
 	location ~ \.php$ {
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		# With php7-fpm:
@@ -28,6 +28,5 @@ server {
 		fastcgi_index index.php;
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 		include /etc/nginx/fastcgi_params;
-
 	}
 }
