@@ -20,6 +20,24 @@ elif [[ -d /config/www/Dashboard/.git ]]; then
   git rev-parse HEAD > /config/www/Dashboard/Github.txt
 fi
 
+# Copy over Nginx status config file if it doesn't exist
+if [ ! -f /config/nginx/healthcheck.conf ]; then
+  echo '----------------------------------'
+  echo '| Copying Nginx status conf file |'
+  echo '----------------------------------'
+  cp /defaults/healthcheck.conf /config/nginx/healthcheck.conf
+else
+  :
+fi
+
+# Check for the include for the healthcheck conf and,
+# if it does not exist, add it
+if [[ $(grep -c healthcheck /config/nginx/site-confs/default) -eq 0 ]]; then
+  sed -i $'s|root /config/www/Dashboard;|root /config/www/Dashboard;\\\n        include /config/nginx/healthcheck.conf;|g' /config/nginx/site-confs/default
+elif [[ $(grep -c healthcheck /config/nginx/site-confs/default) -ge 1 ]]; then
+  :
+fi
+
 # Set Permissions
 chown -R abc:abc \
 	/config
