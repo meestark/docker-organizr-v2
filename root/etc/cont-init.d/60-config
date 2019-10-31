@@ -21,11 +21,17 @@ if [ ! -f /config/nginx/site-confs/.default.original ]; then
   echo '--------------------------------------'
   echo '|      Backing up default file       |'
   echo '--------------------------------------'
-  mv /config/nginx/site-confs/default /config/nginx/site-confs/.default.original
+  if [ -f /config/nginx/site-confs/default ]; then
+    mv /config/nginx/site-confs/default /config/nginx/site-confs/.default.original
+  else
+    :
+  fi
   echo '--------------------------------------'
   echo '|      Copying default site file     |'
   echo '--------------------------------------'
   cp /defaults/default /config/nginx/site-confs/default
+else
+  :
 fi
 
 # Check for the include for the healthcheck conf and,
@@ -49,6 +55,28 @@ fi
 if [[ $(grep -c fastcgi_hide_header /config/nginx/site-confs/default) -eq 0 ]]; then
   sed -i $'s|include /etc/nginx/fastcgi_params;|include /etc/nginx/fastcgi_params;\\\n                fastcgi_hide_header X-Powered-By;|g' /config/nginx/site-confs/default
 elif [[ $(grep -c fastcgi_hide_header /config/nginx/site-confs/default) -ge 1 ]]; then
+  :
+fi
+
+# Copy over Nginx status config file if it doesn't exist
+if [ ! -f /config/nginx/healthcheck.conf ]; then
+  echo 'Checking contents of root dir...'
+  ls -la /
+  echo 'Checking contents of /defaults dir...'
+  ls -la /defaults
+  echo 'Checking contents of /etc/cont-init.d...'
+  ls -la /etc/cont-init.d
+  echo 'Checking contents of /config dir...'
+  ls -la /config
+  echo 'Checking contents of /config/nginx dir...'
+  ls -la /config/nginx
+  echo 'Checking contents of /config/nginx/site-confs'
+  ls -la /config/nginx/site-confs
+  echo '----------------------------------'
+  echo '| Copying Nginx status conf file |'
+  echo '----------------------------------'
+  cp /defaults/healthcheck.conf /config/nginx/healthcheck.conf
+else
   :
 fi
 
