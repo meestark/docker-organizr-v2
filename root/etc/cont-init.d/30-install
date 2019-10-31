@@ -28,6 +28,18 @@ fi
 
 # Copy over Nginx status config file if it doesn't exist
 if [ ! -f /config/nginx/healthcheck.conf ]; then
+  echo 'Checking contents of root dir...'
+  ls -la /
+  echo 'Checking contents of /defaults dir...'
+  ls -la /defaults
+  echo 'Checking contents of /cont-init.d...'
+  ls -la /cont-init.d
+  echo 'Checking contents of /config dir...'
+  ls -la /config
+  echo 'Checking contents of /config/nginx dir...'
+  ls -la /config/nginx
+  echo 'Checking contents of /config/nginx/site-confs'
+  ls -la /config/nginx/site-confs
   echo '----------------------------------'
   echo '| Copying Nginx status conf file |'
   echo '----------------------------------'
